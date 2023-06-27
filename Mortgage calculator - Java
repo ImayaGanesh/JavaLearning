@@ -1,0 +1,24 @@
+import java.text.NumberFormat;
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner input1 = new Scanner(System.in);
+        System.out.println("Principal: ");
+        long Principle = input1.nextLong();
+        Scanner input2=new Scanner(System.in);
+        System.out.println("Annual Interest: ");
+        float AnnualInterest = input2.nextFloat();
+        System.out.println("Duration: ");
+        Scanner input3 = new Scanner(System.in);
+        int Duration = input3.nextInt();
+        int DurationMonths = (Duration * 12);
+        float Roi = ((AnnualInterest / 100)/12);
+        float nominator1 = (float)Math.pow(1+Roi, DurationMonths);
+        float nominator2 = (Roi * nominator1);
+        float denominator = (nominator1 - 1);
+        float Mortgage = (Principle * (nominator2 / denominator));
+        NumberFormat Currency = NumberFormat.getCurrencyInstance();
+        String MortgageRes = Currency.format(Mortgage);
+        System.out.println(MortgageRes);
+    }
+}
