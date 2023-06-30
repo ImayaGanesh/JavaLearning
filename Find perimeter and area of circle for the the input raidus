@@ -1,0 +1,11 @@
+import java.util.Scanner;
+public class Rough {
+    public static void main(String[] args) {
+        final double pi= (3.14);
+        Scanner sc = new Scanner(System.in);
+        Float radiusCircle = sc.nextFloat();
+        double perimeter = (2 * pi * radiusCircle);
+        double area = (pi * (radiusCircle * radiusCircle));
+        System.out.println(perimeter+(" ")+area);
+    }
+}
